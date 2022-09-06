@@ -25,11 +25,14 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: |
-          chmod +x quarkusexercise/mvnw
-          quarkusexercise/mvnw clean package -Dmaven.test.skip=true
+      - name: Set up JDK 11
+        uses: actions/setup-java@v3
+        with:
+          java-version: '11'
+          distribution: 'zulu'
+      
+      - name: Build
+        run: quarkusexercise/mvnw clean package -Dmaven.test.skip=true
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
