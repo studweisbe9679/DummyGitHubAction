@@ -64,6 +64,6 @@ jobs:
           file: DummyGitHubAction/src/main/docker/Dockerfile.jvm
           # Note: tags has to be all lower-case
           tags: |
-            ghcr.io/studbe9679/DummyGitHubAction/example:latest
+            ghcr.io/studbe9679/dummygithubaction/example:latest
           # build on feature branches, push only on main branch
           push: ${{ github.ref == 'refs/heads/main' }}
