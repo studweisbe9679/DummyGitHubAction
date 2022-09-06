@@ -50,7 +50,7 @@ jobs:
         uses: scacap/action-surefire-report@v1
 
       - name: Login to Github Packages
-        uses: docker/login-action@v2
+        uses: docker/login-action@v3
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
@@ -60,7 +60,7 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           # relative path to the place where source code with Dockerfile is located
-          context: quarkusexercise/src/main/docker/Dockerfile.jvm
+          context: quarkusexercise/src/main/docker
           # Note: tags has to be all lower-case
           tags: |
             ghcr.io/oskardudycz/eventsourcing.nodejs/simple:latest
