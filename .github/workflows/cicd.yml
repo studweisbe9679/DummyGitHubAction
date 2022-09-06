@@ -61,9 +61,9 @@ jobs:
         with:
           # relative path to the place where source code with Dockerfile is located
           context: DummyGitHubAction/
-          # Note: tags has to be all lower-case
           file: DummyGitHubAction/src/main/docker/Dockerfile.jvm
+          # Note: tags has to be all lower-case
           tags: |
-            ghcr.io/oskardudycz/eventsourcing.nodejs/simple:latest
+            ghcr.io/studbe9679/example:latest
           # build on feature branches, push only on main branch
           push: ${{ github.ref == 'refs/heads/main' }}
