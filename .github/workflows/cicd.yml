@@ -33,8 +33,9 @@ jobs:
       
       - name: Build
         run: | 
-          chmod +x quarkusexercise/mvnw
-          quarkusexercise/mvnw clean package -Dmaven.test.skip=true
+          cd quarkusexercise/
+          chmod +x ./mvnw
+          ./mvnw clean package -Dmaven.test.skip=true
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
