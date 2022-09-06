@@ -42,3 +42,7 @@ jobs:
         run: |
           cd quarkusexercise/
           ./mvnw surefire-report:report -Dquarkus.datasource.db-kind=h2 -Dquarkus.datasource.jdbc.url=jdbc:h2:mem:test
+
+      - name: Publish Test Report
+        if: ${{ always() }}
+        uses: scacap/action-surefire-report@v1
