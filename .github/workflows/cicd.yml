@@ -6,9 +6,9 @@ name: CI
 on:
   # Triggers the workflow on push or pull request events but only for the "development" branch
   push:
-    branches: [ "development" ]
+    branches: [ "main" ]
   pull_request:
-    branches: [ "development" ]
+    branches: [ "main" ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -66,4 +66,4 @@ jobs:
           tags: |
             ghcr.io/studweisbe9679/dummygithubaction/example:latest
           # build on feature branches, push only on main branch
-          push: ${{ github.ref == 'refs/heads/development' }}
+          push: ${{ github.ref == 'refs/heads/main' }}
