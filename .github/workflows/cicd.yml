@@ -66,4 +66,4 @@ jobs:
           tags: |
             ghcr.io/studbe9679/dummygithubaction/example:latest
           # build on feature branches, push only on main branch
-          push: ${{ github.ref == 'refs/heads/main' }}
+          push: ${{ github.ref == 'refs/heads/development' }}
