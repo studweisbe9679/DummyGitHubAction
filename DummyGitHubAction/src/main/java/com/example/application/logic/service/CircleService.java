@@ -6,6 +6,9 @@ import com.example.domain.model.Circle;
 import com.example.persistence.repository.CircleRepository;
 
 import javax.enterprise.context.ApplicationScoped;
+import javax.enterprise.context.RequestScoped;
+import javax.inject.Inject;
+import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -15,8 +18,10 @@ import static java.lang.Math.*;
 @ApplicationScoped
 public class CircleService implements ICircleService {
 
+    @PersistenceContext
     private final CircleRepository circleRepository;
 
+    @Inject
     public CircleService(CircleRepository circleRepository) {
         this.circleRepository = circleRepository;
     }

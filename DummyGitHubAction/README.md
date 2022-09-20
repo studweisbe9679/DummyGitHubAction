@@ -14,6 +14,10 @@ You can run your application in dev mode that enables live coding using:
 
 > **_NOTE:_**  Quarkus now ships with a Dev UI, which is available in dev mode only at http://localhost:8080/q/dev/.
 
+``` Swagger UI
+http://localhost:8080/q/swagger-ui/
+```
+
 ## Packaging and running the application
 
 The application can be packaged using:
@@ -60,3 +64,18 @@ If you want to learn more about building native executables, please consult http
 Easily start your Reactive RESTful Web Services
 
 [Related guide section...](https://quarkus.io/guides/getting-started-reactive#reactive-jax-rs-resources)
+
+## Test Database
+``` Pull db docker image
+docker run --name postgres -e POSTGRES_PASSWORD=password -d -p 5432:5432 postgres:alpine
+```
+
+``` Start db docker image
+docker start portgres
+```
+
+| Name     | Value    |
+|----------|----------|
+| Name     | postgres |
+| Password | password |
+| Port     | 5432     |
